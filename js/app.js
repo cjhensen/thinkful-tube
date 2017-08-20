@@ -29,8 +29,17 @@ function renderItemHtml(item) {
    return `
       <div class="item">
         <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
-          <img src="${item.snippet.thumbnails.high.url}">
+          <img src="${item.snippet.thumbnails.high.url}" alt="${item.snippet.title}">
         </a>
+        <div class="video-info">
+        <div class="title">
+          <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
+          ${item.snippet.title}
+          </a>
+        </div>
+          <div class="channel">${item.snippet.channelTitle}</div>
+          <div class="description">${item.snippet.description}</div>
+        </div>
       </div>
    `;
 }
@@ -49,7 +58,7 @@ function showQueryData(data) {
   // array of items to append to the html
   const results = dataWithoutChannel.map((item, index) => renderItemHtml(item));
   $('.js-search-results').html(results);
-
+  $('.js-search-count').html(`${data.pageInfo.totalResults} total results`);
 }
 
 function handleSearchBtnClicked(event) {

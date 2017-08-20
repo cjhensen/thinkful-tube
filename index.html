@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" name="description" content="">
 
-  <title></title>
+  <title>Thinkful Tube</title>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -18,10 +18,10 @@
       <form>
         <label for="search-query">Search</label>
         <input type="text" name="search-query" id="search-query" class="js-search-query" placeholder="search">
+        <button type="submit" class="js-btn-search">Search</button>
       </form>
-      <button type="submit" class="js-btn-search">Search</button>
-
-      <div class="js-search-results">
+      <div class="search-count js-search-count"></div>
+      <div class="js-search-results search-results" aria-live="assertive">
 
       </div>
     </div><!-- / .container -->
